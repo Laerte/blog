@@ -17,8 +17,8 @@ module.exports = {
     twitter: 'Laerte',
     medium: '@Laerte',
     facebook: '',
-    github: '',
-    linkedin: '',
+    github: 'Laerte',
+    linkedin: 'laertedev',
     instagram: '',
   },
 }
