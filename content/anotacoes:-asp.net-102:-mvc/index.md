@@ -41,7 +41,7 @@ Para incorporar ela numa View utilize:
 }
 ```
 
-Para criar uma tag _<a>_ de link use o helper
+Para criar uma tag ```_<a>_``` de link use o helper
 
 ```
 @Html.ActionLink(“Nome”,”Action”, “Controller”)
