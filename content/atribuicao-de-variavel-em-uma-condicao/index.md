@@ -23,7 +23,7 @@ Implementando uma funcionalidade num sistema que ao pressionar determinadas tecl
 
 #### script.js
 
-```
+```javascript
 var isUPKey = false;
 
 function validacao (num) {
@@ -49,7 +49,7 @@ Na segunda iteração isUPKey era verdadeira, já na #3 iteração a segunda con
 
 Nesse cenário a primeira solução não se adequa, pois não consigo verificar mais de uma tecla por vez.
 
-```
+```javascript
 function validacao () {
 	if((isUPKey = keyCode == 38) || keyCode == 13 || keyCode == 40) {
 		// código omitido
