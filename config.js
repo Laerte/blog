@@ -15,7 +15,7 @@ module.exports = {
   social: {
     // leave the social media you do not want to appear as empty strings
     twitter: 'Laerte',
-    medium: '@Laerte',
+    medium: '',
     facebook: '',
     github: 'Laerte',
     linkedin: 'laertedev',
