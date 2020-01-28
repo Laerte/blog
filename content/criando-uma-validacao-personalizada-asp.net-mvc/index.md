@@ -11,7 +11,7 @@ redirect_from:
 
 1.  Crie uma classe que herde da classe **ValidationAttribute:**
 
-```
+```csharp
 public class Teste : ValidationAttribute
 {
  public string Valor { get; set; }
@@ -24,7 +24,7 @@ public class Teste : ValidationAttribute
 
 3\. Sobrescreva o método **IsValid()**;
 
-```
+```csharp
 public override bool IsValid(object value)
 {
  // Validação
@@ -33,7 +33,7 @@ public override bool IsValid(object value)
 
 Depois é só usar na Model:
 
-```
+```csharp
 [Teste(“Parametro”), ErrorMessage = “{0} não é válido.”]
 public string Campo { get; set; }
 ```![Classe personalizada de validação](./asset-1.png)

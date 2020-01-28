@@ -17,7 +17,7 @@ Hoje resolvi assistir esse [curso de MVC da Tuts+](http://code.tutsplus.com/cour
 
 Para criar um bloco de código na View basta usar, nele você pode ter HTML, C# tudo junto e misturado.
 
-```
+```csharp
 @{
 
  // Código
@@ -33,17 +33,17 @@ A “**Master Page**” do Razor é a \_Layout que fica dentro da pasta **Shared
 
 Para incorporar ela numa View utilize:
 
-```
+```csharp
 @{
 
-  Layout = “~/Shared/_Layout”; 
+  Layout = “~/Shared/_Layout”;
 
 }
 ```
 
 Para criar uma tag ```_<a>_``` de link use o helper
 
-```
+```csharp
 @Html.ActionLink(“Nome”,”Action”, “Controller”)
 ```
 
@@ -61,7 +61,7 @@ O segundo parâmetro é opcional e o padrão é verdadeiro, ele diz se é obriga
 
 O código pra implementar a seção na view é:
 
-```
+```csharp
 @section NomeDaSecao{
 
 // contéudo
@@ -73,7 +73,7 @@ Quando divimos o conteúdo em seções raramente precisamos usar o o **@RenderBo
 
 Para verificar se a seção foi definida, na \_Layout fazemos a seguinte condição
 
-```
+```csharp
 @if(IsSectionDefined(“Nome”){
 
 <div id=”sidebar”>@RenderSection(“Nome da Seção”, false)</div>
@@ -98,14 +98,14 @@ public ActionResult Editar(int? id)
 Falei do ActionLink um pouco mais acima, mas também é possível criar links a partir de rotas.
 
 ```
-@Html.RouteLink(“Nome Link”, “Rota”, new { action = “Editar”, id = 1 } 
+@Html.RouteLink(“Nome Link”, “Rota”, new { action = “Editar”, id = 1 }
 
 @Url.RouteUrl(“Rota”, new { action = “Editar”, id = 2 }) // Usado no retorn dos Controllers.
 ```
 
 Também é possível saber se a requisição foi feita por **Ajax**, usando a função:
 
-```
+```csharp
 if(Request.IsAjaxRequest())
 {
   return PartialView(); //Retorna uma PartialView que é basicamente a View se o _ViewStart apenas o conteúdo da view.
@@ -114,7 +114,7 @@ if(Request.IsAjaxRequest())
 
 Quando a **Action** tem sobrecarga é necessário especificar se é GET ou POST.
 
-```
+```csharp
 [HttpGet]
 public ActionResult Editar(int id)
 {
@@ -132,8 +132,8 @@ Nesse exemplo no GET ele carrega o objeto, e no POST ele salva.
 
 Quando a View é tipada temos que usar o Helper:
 
-```
-@Html.HiddenFor(m => m.Id) 
+```csharp
+@Html.HiddenFor(m => m.Id)
 ```
 
 Para guardar informações que não são visíveis para o usuário mas são essenciais para sabermos qual objeto estamos manipulando.
@@ -142,7 +142,7 @@ Para redirecionar uma View podemos utilizar: **RedirectResult** e **RedirectToAc
 
 Algumas validações que podem ser usadas nas Models:
 
-```
+```csharp
 [Display(Name = “Campo)] // Como o nome da propriedade será exibida nas validações e nas views (Labels, etc).
 
 Required(ErrorMessage = “{0} é obrigatório”)] // Torna a propriedade obrigatória, o {0} é o nome da propriedade se for setado o Display ele pega o valor do Display.
@@ -157,14 +157,14 @@ public string Campo {get; set;}
 
 Nas Views:
 
-```
+```csharp
 @Html.ValidationMessageFor(m => m.campo) // Exibe do lado do campo
 @Html.ValidationSummary() // Mostra os erros numa lista
 ```
 
 Para verificar se uma View é válida no Controller usamos **ModelState.IsValid**, como ele retorna se a Model é válida devemos apenas negar ela:
 
-```
+```csharp
 if(!ModelState.IsValid){
    // Código
 }
@@ -174,7 +174,7 @@ if(!ModelState.IsValid){
 
 1.  Crie uma classe que herde da classe **ValidationAttribute:**
 
-```
+```csharp
 public class Teste : ValidationAttribute
 {
      public string Valor { get; set; }
@@ -187,7 +187,7 @@ public class Teste : ValidationAttribute
 
 3\. Sobrescreva o método **IsValid()**;
 
-```
+```csharp
 public override bool IsValid(object value)
 {
   // Validação
@@ -196,7 +196,7 @@ public override bool IsValid(object value)
 
 Depois é só usar na Model:
 
-```
+```csharp
 [Teste(“Parametro”), ErrorMessage = “{0} não é válido.”]
 public string Campo { get; set; }
 ```

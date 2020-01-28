@@ -11,7 +11,7 @@ redirect_from:
 
 Criando uma página de cadastro que usa validações via Javascript observei o seguinte problema: As validações padrões do ASP (ex: RequiredFieldValidator) não estavam funcionando, a ação do “OnClientClick” executava sem verificar se os validadores do ASP, pesquisando um pouco no **StackOverflow** encontrei a solução:
 
-```
+```csharp
 if(Page_ClientValidate()) {
 	return Funcao('param')
 }

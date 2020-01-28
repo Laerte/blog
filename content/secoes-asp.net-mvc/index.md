@@ -13,7 +13,7 @@ Quando criamos uma Master Page o principal objetivo é não duplicar código, ma
 
 Exemplo: A Master Page contém um Side Bar mas na página de Contato não é necessário popular essa _div._ Quando isso ocorre na página \_Layout dividimos as divs em Seções:
 
-```
+```csharp
 <div id=”sidebar”>@RenderSection(“Nome da Seção”, true)</div>
 ```
 
@@ -21,7 +21,7 @@ O segundo parâmetro é opcional e o padrão é verdadeiro, ele diz se é obriga
 
 O código pra implementar a seção na view é:
 
-```
+```csharp
 @section NomeDaSecao{
 
 // contéudo
@@ -33,7 +33,7 @@ Quando divimos o conteúdo em seções raramente precisamos usar o o **@RenderBo
 
 Para verificar se a seção foi definida, na \_Layout fazemos a seguinte condição
 
-```
+```csharp
 @if(IsSectionDefined(“Nome”){
 
 <div id=”sidebar”>@RenderSection(“Nome da Seção”, false)</div>

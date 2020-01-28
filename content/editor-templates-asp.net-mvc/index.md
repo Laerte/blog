@@ -25,12 +25,12 @@ PartialView você codifica como o conteúdo vai ser visto, nesse caso quando a p
 
 Caso você não for usar esse template em todo o projeto para esse tipo de dado você deve por outro nome, como “DataPersonalizada”, se esse for o caso você de por essa **Data Annotation,** na propriedade do Model:
 
-```
+```csharp
 [UIHint(“DataPersonalizada”)]
 ```
 
 Você também pode criar um Editor Template personalizado pra Model inteira, na View a forma de chamar é:
 
-```
+```csharp
 @EditorFor(m => m)
 ```

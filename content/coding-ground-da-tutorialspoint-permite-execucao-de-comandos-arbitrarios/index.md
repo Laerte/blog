@@ -21,7 +21,7 @@ Baixar um arquivo java externo, compilar e executa-lo.
 
 Código-fonte do arquivo **Test:**
 
-```
+```java
 public class Test {
     public static void main (String[] args) {
         System.out.println("It Works!");
